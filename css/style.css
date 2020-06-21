@@ -1,0 +1,60 @@
+html{
+    font-family: 'Dancing Script', cursive;
+    font-size: 10px;
+}
+
+body{
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(120deg, #1766cf, #0eb5ed);
+}
+
+h1{
+    color: whitesmoke;
+    font-size: 8rem;
+    
+}
+
+
+.todo1,
+.todoClone {
+    margin: 10px;
+}
+
+
+
+.inp,
+.inpClone{
+    border-radius: 30px;
+    border: 3px solid;
+    text-align: center;
+    opacity: 80%;
+    font-size: 2rem;
+    padding: 4px;
+}
+
+.buttonPlus,
+.buttonPlusClone, 
+.buttonMinus,
+.buttonMinusClone{
+    border-radius: 200px;
+    padding: 2px;
+    width: 30px;
+    border: 1px solid;
+    text-align: center;
+    opacity: 80%;
+    font-size: 2rem;
+    background-color: silver;
+}
+
+
+
+.buttonPlusClone:hover,
+.buttonPlus:hover{
+    background-color: rgba(0, 255, 21,0.5);
+}
+
+.buttonMinusClone:hover,
+.buttonMinusClone:hover{
+    background-color: rgba(255, 37, 37);
+}
