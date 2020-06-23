@@ -22,15 +22,49 @@ h1{
 }
 
 
+.todoClone{ 
+    position: relative;
+    animation-name: positions;
+    animation-duration: 0.2s;
+}
 
-.inp,
-.inpClone{
+@keyframes positions{
+    
+  0% {top: -43px;}
+  25%  {top: -26px;}
+  50%  {top: -16px;}
+  100% {top: 10px;}
+   
+
+}
+
+
+
+.inp{
     border-radius: 30px;
     border: 3px solid;
     text-align: center;
     opacity: 80%;
     font-size: 2rem;
     padding: 4px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+.liClone{
+    display: inline-block;
+    height: 22px;
+    border-radius: 30px;
+    border: 3px solid;
+    text-align: center;
+    opacity: 80%;
+    font-size: 2rem;
+    padding: 4px;
+    width: 30%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .buttonPlus,
@@ -55,6 +89,10 @@ h1{
 }
 
 .buttonMinusClone:hover,
-.buttonMinusClone:hover{
+.buttonMinus:hover{
     background-color: rgba(255, 37, 37);
 }
+
+
+
+
