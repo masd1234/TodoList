@@ -26,7 +26,11 @@ h1{
     position: relative;
     animation-name: positions;
     animation-duration: 0.2s;
+    
+    
 }
+
+
 
 @keyframes positions{
     
@@ -35,8 +39,11 @@ h1{
   50%  {top: -16px;}
   100% {top: 10px;}
    
-
 }
+
+
+
+
 
 
 
@@ -47,21 +54,22 @@ h1{
     opacity: 80%;
     font-size: 2rem;
     padding: 4px;
-    width: 30%;
+    width: 25%;
     margin: 0 auto;
 }
 
 
 .liClone{
+    position: auto;
     display: inline-block;
-    height: 22px;
+    height: auto;
     border-radius: 30px;
-    border: 3px solid;
     text-align: center;
+    border: 2px solid;
     opacity: 80%;
     font-size: 2rem;
-    padding: 4px;
-    width: 30%;
+    padding: 2px;
+    width: 25%;
     margin: 0 auto;
     background-color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
@@ -71,15 +79,24 @@ h1{
 .buttonPlusClone, 
 .buttonMinus,
 .buttonMinusClone{
+    display: inline-block;
     border-radius: 200px;
     padding: 2px;
     width: 30px;
-    border: 1px solid;
+    border: 0.5px solid;
     text-align: center;
     opacity: 80%;
     font-size: 2rem;
-    background-color: silver;
+    background-color: rgb(255, 254, 254);
 }
+
+.buttonPlusClone,.buttonMinusClone{
+    position: relative;
+    margin: 2px;
+    left: 6px;
+    
+}
+
 
 
 
