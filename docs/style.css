@@ -14,6 +14,8 @@ h1 {
   font-size: 8rem;
 }
 
+
+
 .todo1,
 .todoClone {
   margin: 10px;
@@ -109,3 +111,29 @@ h1 {
   color: red;
   font-size: 3rem;
 }
+
+
+@media only screen and (max-width: 901px) {
+  #val{
+    width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #val{
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #val{
+    width: 19rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  #val{
+    width: 14rem;
+  }
+}
+
