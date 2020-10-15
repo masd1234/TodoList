@@ -20,7 +20,6 @@ h1 {
 }
 
 .todoClone {
-  position: relative;
   animation-name: positions;
   animation-duration: 0.2s;
 }
