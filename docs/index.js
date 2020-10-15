@@ -15,7 +15,7 @@ const selectorExposer = (() => {
   };
 })();
 
-const addElement = (event) => {
+const addElement = (e) => {
   const externalSeleAdd = selectorExposer.selectorPublic().selectors;
 
   // html elements creation
@@ -65,7 +65,7 @@ const addElement = (event) => {
 
   //checks if the input is empty or not
   if (valueInpt === "" || valueInpt === null) {
-    event.stopPropagation();
+    e.stopPropagation();
     alert("You must type a task in the input field");
   } else {
     //appending the new div to the body of html
@@ -78,33 +78,42 @@ const addElement = (event) => {
   }
 };
 
-const listenerEvent = ((e) => {
+// this function remove a list element from the bottom click the buttom
+const removeElement = (e) => {
   const externalSelecListener = selectorExposer.selectorPublic().selectors;
+  if (
+    externalSelecListener.container.lastElementChild ===
+    externalSelecListener.buttonMinus
+  ) {
+    e.stopPropagation();
+  } else {
+    externalSelecListener.container.removeChild(
+      externalSelecListener.container.lastElementChild
+    );
+  }
+};
 
-  // this function remove a list element from the bottom click the buttom
+// this function removes the current list element if you click the buttom - or check  if the same list element is complete
 
-  const removeElement = (e) => {
-    if (
-      externalSelecListener.container.lastElementChild ===
-      externalSelecListener.buttonMinus
-    ) {
-      e.stopPropagation();
-    } else {
-      externalSelecListener.container.removeChild(
-        externalSelecListener.container.lastElementChild
-      );
+const checkValue = (e) => {
+  if (e.target.id == "buttonMinusCloneId") {
+    e.target.parentNode.remove();
+  } else if (e.target.id == "buttonPlusCloneId") {
+    e.target.parentNode.classList.toggle("taskDone");
+  }
+};
+
+const listenerEvent = (() => {
+  const externalSelecListener = selectorExposer.selectorPublic().selectors;
+  // this if stament handles the key press envent
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      addElement(e);
+    } else if (e.key === "Backspace") {
+      removeElement(e);
     }
-  };
+  });
 
-  const checkValue = (e) => {
-    if (e.target.id == "buttonMinusCloneId") {
-      e.target.parentNode.remove();
-    } else if (e.target.id == "buttonPlusCloneId") {
-      e.target.parentNode.classList.toggle("taskDone");
-    }
-  };
-
-  // this function removes the current list element if you click the buttom - or check the same list element if is complete
   externalSelecListener.container.addEventListener("click", checkValue);
   externalSelecListener.buttonMas.addEventListener("click", addElement);
   externalSelecListener.buttonMinus.addEventListener("click", removeElement);
