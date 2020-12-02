@@ -82,16 +82,14 @@ const addElement = (e) => {
 const removeElement = (e) => {
   const externalSelecListener = selectorExposer.selectorPublic().selectors;
   if (
-    
-    externalSelecListener.container.buttonMinus.id === "buttonMinus"
-    
+    e.target.parentNode.id === "containerInputId" &&
+    document.getElementById("todoIdClone")
   ) {
-    e.stopPropagation();
-  } else {
-    console.log(externalSelecListener.container.lastElementChild)
     externalSelecListener.container.removeChild(
       externalSelecListener.container.lastElementChild
     );
+  } else {
+    e.stopPropagation();
   }
 };
 
