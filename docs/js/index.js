@@ -82,11 +82,13 @@ const addElement = (e) => {
 const removeElement = (e) => {
   const externalSelecListener = selectorExposer.selectorPublic().selectors;
   if (
-    externalSelecListener.container.lastElementChild ===
-    externalSelecListener.buttonMinus
+    
+    externalSelecListener.container.buttonMinus.id === "buttonMinus"
+    
   ) {
     e.stopPropagation();
   } else {
+    console.log(externalSelecListener.container.lastElementChild)
     externalSelecListener.container.removeChild(
       externalSelecListener.container.lastElementChild
     );
