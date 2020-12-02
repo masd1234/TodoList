@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-family: "Dancing Script", cursive;
   font-size: 10px;
@@ -7,16 +13,32 @@ body {
   width: 100%;
   text-align: center;
   background-image: linear-gradient(120deg, #1766cf, #0eb5ed);
+  height: 100vh;
 }
 
 h1 {
   color: whitesmoke;
   font-size: 8rem;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo1 {
+  height: 500px;
 }
 
 .todo1,
 .todoClone {
-  margin: 10px;
+  margin: 9px 0;
 }
 
 .todoClone {
@@ -40,97 +62,91 @@ h1 {
 }
 
 .inp {
-  border-radius: 30px;
-  border: 3px solid;
+  border-radius: 10px;
+  border: none;
   text-align: center;
   opacity: 80%;
   font-size: 2rem;
   padding: 4px;
-  width: 25%;
-  margin: 0 auto;
+  font-family: "Questrial", sans-serif;
+}
+
+.todoClone {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .liClone {
-  font-family: "Dancing Script", cursive;
+  font-family: "Questrial", sans-serif;
   position: auto;
   display: inline-block;
-  height: auto;
-  border-radius: 30px;
+  height: 30px;
+  border-radius: 10px;
   text-align: center;
-  border: 2px solid;
+  border: none;
   opacity: 80%;
   font-size: 2rem;
   padding: 2px;
-  width: 25%;
-  margin: 0 auto;
   background-color: whitesmoke;
-  font-family: "Times New Roman", Times, serif;
+}
+
+.inp,
+.liClone {
+  width: 30rem;
 }
 
 .buttonPlus,
 .buttonPlusClone,
 .buttonMinus,
 .buttonMinusClone {
-  display: inline-block;
-  border-radius: 200px;
-  padding: 2px;
+  padding: 0;
+  border-radius: 10px;
   width: 30px;
-  border: 0.5px solid;
-  text-align: center;
   opacity: 80%;
+  height: 30px;
   font-size: 2rem;
+  border: none;
   background-color: rgb(255, 254, 254);
-}
-
-.buttonPlusClone,
-.buttonMinusClone {
-  position: relative;
-  margin: 2px;
-  left: 6px;
 }
 
 .buttonPlusClone:hover,
 .buttonPlus:hover {
   background-color: rgba(0, 255, 21, 0.5);
+  color: white;
+  transition: 1s;
 }
 
 .buttonMinusClone:hover,
 .buttonMinus:hover {
   background-color: rgba(255, 37, 37);
+  color: white;
+  transition: 1s;
 }
 
 .taskDone {
-  color: greenyellow;
-  font-size: 1rem;
+  background-color: rgb(14, 238, 25);
+  transition: 0.5s;
+  color: white;
 }
 
 .taskFailed {
   color: red;
-  font-size: 3rem;
 }
 
-@media only screen and (max-width: 901px) {
-  #val {
-    width: 50%;
+@media only screen and (max-width: 427px) {
+  h1 {
+    font-size: 6rem;
   }
+
+  #val,
   .liClone {
-    width: 50%;
+    width: 20rem;
   }
 }
 
-@media only screen and (max-width: 386px) {
-  #val {
-    width: 70%;
-  }
-  .liClone {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 281px) {
-  #val {
-    width: 50%;
-  }
+@media only screen and (max-width: 341px) {
+  #val,
   .liClone {
     width: 50%;
   }

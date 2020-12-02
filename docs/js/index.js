@@ -99,7 +99,7 @@ const checkValue = (e) => {
   if (e.target.id == "buttonMinusCloneId") {
     e.target.parentNode.remove();
   } else if (e.target.id == "buttonPlusCloneId") {
-    e.target.parentNode.classList.toggle("taskDone");
+    e.target.previousSibling.classList.toggle("taskDone");
   }
 };
 
@@ -109,8 +109,6 @@ const listenerEvent = (() => {
   window.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       addElement(e);
-    } else if (e.key === "Backspace") {
-      removeElement(e);
     }
   });
 

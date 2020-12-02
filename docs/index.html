@@ -9,21 +9,22 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
       rel="stylesheet"
     />
-    <script src="index.js" async></script>
-    <script src="test.js" async></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/index.js" async></script>
   </head>
   <body>
     <h1>To-do List</h1>
 
     <div class="todo1">
-      <input
-        class="inp"
-        type="text"
-        id="val"
-        placeholder="Type your pending task"
-      />
-      <button class="buttonPlus">+</button>
-      <button class="buttonMinus">-</button>
+      <div class="containerInput">
+        <input class="inp" type="text" id="val" placeholder="Task" />
+        <button class="buttonPlus">+</button>
+        <button class="buttonMinus">-</button>
+      </div>
     </div>
   </body>
 </html>
