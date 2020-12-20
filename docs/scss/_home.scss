@@ -1,0 +1,95 @@
+h1 {
+  color: $color-white;
+  font-size: 8rem;
+  height: 200px;
+  @include displayFlexCenter;
+}
+
+.todo1 {
+  height: 500px;
+  margin: 9px 0;
+
+  .containerInput {
+    @include displayFlexCenter;
+    gap: 0.5rem;
+    .inp {
+      @include inputLayout;
+    }
+  }
+
+  .todoClone {
+    @include displayFlexCenter;
+    gap: 0.5rem;
+    margin: 9px 0;
+
+    .taskDone {
+      transition: 0.5s;
+      color: $color-green;
+    }
+
+    .liClone {
+      position: auto;
+      display: inline-block;
+      @include inputLayout;
+      background-color: $color-white;
+    }
+  }
+  .buttonMinus,
+  .buttonMinusClone {
+    @include buttomLayout;
+    background-color: $color-white;
+    transition: 1s;
+    &:hover,
+    &:hover {
+      background-color: $color-red;
+      color: $color-white;
+      @include hover;
+    }
+
+    &:active,
+    &:active {
+      @include unhover;
+    }
+  }
+
+  .buttonPlus,
+  .buttonPlusClone {
+    @include buttomLayout;
+    background-color: $color-white;
+    transition: 1s;
+    &:hover,
+    &:hover {
+      @include hover;
+      background-color: $color-green;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 1px 5px 5px 0px $color-shadow;
+    }
+    &:active,
+    &:active {
+      @include unhover;
+    }
+  }
+}
+
+.taskFailed {
+  color: $color-red;
+}
+
+@media only screen and (max-width: 427px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  #val,
+  .liClone {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 341px) {
+  #val,
+  .liClone {
+    width: 50%;
+  }
+}

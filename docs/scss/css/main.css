@@ -1,0 +1,194 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Dancing Script", cursive;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(120deg, #1766cf, #0eb5ed);
+  height: 100vh;
+}
+
+h1 {
+  color: whitesmoke;
+  font-size: 8rem;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.todo1 {
+  height: 500px;
+  margin: 9px 0;
+}
+
+.todo1 .containerInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+}
+
+.todo1 .containerInput .inp {
+  border-radius: 10px;
+  height: 30px;
+  width: 30rem;
+  border: none;
+  text-align: center;
+  opacity: 80%;
+  font-size: 2rem;
+  padding: 4px;
+  font-family: "Questrial", sans-serif;
+}
+
+.todo1 .todoClone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  margin: 9px 0;
+}
+
+.todo1 .todoClone .taskDone {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: rgba(0, 255, 21, 0.5);
+}
+
+.todo1 .todoClone .liClone {
+  position: auto;
+  display: inline-block;
+  border-radius: 10px;
+  height: 30px;
+  width: 30rem;
+  border: none;
+  text-align: center;
+  opacity: 80%;
+  font-size: 2rem;
+  padding: 4px;
+  font-family: "Questrial", sans-serif;
+  background-color: whitesmoke;
+}
+
+.todo1 .buttonMinus,
+.todo1 .buttonMinusClone {
+  padding: 0;
+  border-radius: 10px;
+  width: 30px;
+  opacity: 80%;
+  height: 30px;
+  font-size: 2rem;
+  border: none;
+  background-color: whitesmoke;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.todo1 .buttonMinus:hover, .todo1 .buttonMinus:hover,
+.todo1 .buttonMinusClone:hover,
+.todo1 .buttonMinusClone:hover {
+  background-color: #ff2525;
+  color: whitesmoke;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 1px 5px 5px 0px black;
+          box-shadow: 1px 5px 5px 0px black;
+}
+
+.todo1 .buttonMinus:active, .todo1 .buttonMinus:active,
+.todo1 .buttonMinusClone:active,
+.todo1 .buttonMinusClone:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-box-shadow: 0px 0px 0px 0px black;
+          box-shadow: 0px 0px 0px 0px black;
+}
+
+.todo1 .buttonPlus,
+.todo1 .buttonPlusClone {
+  padding: 0;
+  border-radius: 10px;
+  width: 30px;
+  opacity: 80%;
+  height: 30px;
+  font-size: 2rem;
+  border: none;
+  background-color: whitesmoke;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.todo1 .buttonPlus:hover, .todo1 .buttonPlus:hover,
+.todo1 .buttonPlusClone:hover,
+.todo1 .buttonPlusClone:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 1px 5px 5px 0px black;
+          box-shadow: 1px 5px 5px 0px black;
+  background-color: rgba(0, 255, 21, 0.5);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 1px 5px 5px 0px black;
+}
+
+.todo1 .buttonPlus:active, .todo1 .buttonPlus:active,
+.todo1 .buttonPlusClone:active,
+.todo1 .buttonPlusClone:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-box-shadow: 0px 0px 0px 0px black;
+          box-shadow: 0px 0px 0px 0px black;
+}
+
+.taskFailed {
+  color: #ff2525;
+}
+
+@media only screen and (max-width: 427px) {
+  h1 {
+    font-size: 6rem;
+  }
+  #val,
+  .liClone {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 341px) {
+  #val,
+  .liClone {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
