@@ -76,20 +76,23 @@ h1 {
   color: $color-red;
 }
 
-@media only screen and (max-width: 427px) {
+@media only screen and (max-width: 480px) {
   h1 {
     font-size: 6rem;
   }
-
-  #val,
-  .liClone {
-    width: 20rem;
+  .todo1 {
+    .containerInput {
+      .inp {
+        width: 60%;
+      }
+    }
   }
-}
 
-@media only screen and (max-width: 341px) {
-  #val,
-  .liClone {
-    width: 50%;
+  .todo1 {
+    .todoClone {
+      .liClone {
+        width: 60%;
+      }
+    }
   }
 }

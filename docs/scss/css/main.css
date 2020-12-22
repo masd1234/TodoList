@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -21,15 +20,9 @@ h1 {
   color: whitesmoke;
   font-size: 8rem;
   height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo1 {
@@ -38,15 +31,9 @@ h1 {
 }
 
 .todo1 .containerInput {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -63,21 +50,14 @@ h1 {
 }
 
 .todo1 .todoClone {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin: 9px 0;
 }
 
 .todo1 .todoClone .taskDone {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   color: rgba(0, 255, 21, 0.5);
 }
@@ -107,7 +87,6 @@ h1 {
   font-size: 2rem;
   border: none;
   background-color: whitesmoke;
-  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -116,21 +95,16 @@ h1 {
 .todo1 .buttonMinusClone:hover {
   background-color: #ff2525;
   color: whitesmoke;
-  -webkit-transition: 1s;
   transition: 1s;
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-  -webkit-box-shadow: 1px 5px 5px 0px black;
-          box-shadow: 1px 5px 5px 0px black;
+  transform: translateY(-2px);
+  box-shadow: 1px 5px 5px 0px black;
 }
 
 .todo1 .buttonMinus:active, .todo1 .buttonMinus:active,
 .todo1 .buttonMinusClone:active,
 .todo1 .buttonMinusClone:active {
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-  -webkit-box-shadow: 0px 0px 0px 0px black;
-          box-shadow: 0px 0px 0px 0px black;
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px black;
 }
 
 .todo1 .buttonPlus,
@@ -143,19 +117,15 @@ h1 {
   font-size: 2rem;
   border: none;
   background-color: whitesmoke;
-  -webkit-transition: 1s;
   transition: 1s;
 }
 
 .todo1 .buttonPlus:hover, .todo1 .buttonPlus:hover,
 .todo1 .buttonPlusClone:hover,
 .todo1 .buttonPlusClone:hover {
-  -webkit-transition: 1s;
   transition: 1s;
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-  -webkit-box-shadow: 1px 5px 5px 0px black;
-          box-shadow: 1px 5px 5px 0px black;
+  transform: translateY(-2px);
+  box-shadow: 1px 5px 5px 0px black;
   background-color: rgba(0, 255, 21, 0.5);
   color: white;
   transform: translateY(-2px);
@@ -165,30 +135,23 @@ h1 {
 .todo1 .buttonPlus:active, .todo1 .buttonPlus:active,
 .todo1 .buttonPlusClone:active,
 .todo1 .buttonPlusClone:active {
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-  -webkit-box-shadow: 0px 0px 0px 0px black;
-          box-shadow: 0px 0px 0px 0px black;
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px black;
 }
 
 .taskFailed {
   color: #ff2525;
 }
 
-@media only screen and (max-width: 427px) {
+@media only screen and (max-width: 480px) {
   h1 {
     font-size: 6rem;
   }
-  #val,
-  .liClone {
-    width: 20rem;
+  .todo1 .containerInput .inp {
+    width: 60%;
   }
-}
-
-@media only screen and (max-width: 341px) {
-  #val,
-  .liClone {
-    width: 50%;
+  .todo1 .todoClone .liClone {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=main.css.map */
