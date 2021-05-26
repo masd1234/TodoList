@@ -17,9 +17,7 @@ const selectorExposer = (() => {
 
 const addElement = (e) => {
   const externalSeleAdd = selectorExposer.selectorPublic().selectors;
-
   // html elements creation
-
   const containerCreator = {
     creatCont: document.createElement("div"),
     creatLi: document.createElement("li"),
@@ -27,12 +25,8 @@ const addElement = (e) => {
     creatButtonMinus: document.createElement("button"),
   };
 
-  const {
-    creatCont,
-    creatLi,
-    creatButtonPlus,
-    creatButtonMinus,
-  } = containerCreator;
+  const { creatCont, creatLi, creatButtonPlus, creatButtonMinus } =
+    containerCreator;
 
   //adding classes to html elements
 
