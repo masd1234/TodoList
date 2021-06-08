@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="./scss/css/main.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-      rel="stylesheet"
-    />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
     <script src="./js/index.js" async></script>
   </head>
   <body>
-    <h1>To-do List</h1>
-
-    <div class="todo1" id="containerAll">
+    <div class="header-container">
+      <div class="logo-container"><h1>To-do List</h1></div>
       <div class="containerInput" id="containerInputId">
-        <input class="inp" type="text" id="val" placeholder="Task" />
-        <button class="buttonPlus">+</button>
-        <button class="buttonMinus" id="mainMinusButtom">-</button>
+        <label class="label" for="valTask">Task:</label>
+        <input class="inp" type="text" id="valTask" placeholder="Task" />
+      </div>
+      <div class="containerInput" id="containerInputId">
+        <label class="label" for="val" class="inp">Category:</label>
+        <select class="inp" id="valCategory" name="val" placeholder="Category">
+          <option value="Home">Home</option>
+          <option value="Finance">Finance</option>
+          <option value="Job">Job</option>
+          <option value="Leisure">Leisure</option>
+          <option value="Others">others</option>
+        </select>
+      </div>
+      <div class="containerInput" id="container-buttons">
+        <button class="button-header" id="buttonPlus">+</button>
+        <button class="button-header" id="buttonMinus">-</button>
       </div>
     </div>
+
+    <div class="container-items-todo"></div>
   </body>
 </html>

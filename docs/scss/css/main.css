@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: "Dancing Script", cursive;
+  font-family: "Roboto", sans-serif;
   font-size: 10px;
 }
 
@@ -16,142 +16,158 @@ body {
   height: 100vh;
 }
 
-h1 {
-  color: whitesmoke;
-  font-size: 8rem;
-  height: 200px;
+.header-container {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  position: relative;
+  height: 5%;
+  flex-wrap: wrap;
+  z-index: 500;
 }
 
-.todo1 {
-  height: 500px;
-  margin: 9px 0;
+.header-container .logo-container {
+  min-width: 15%;
+  color: whitesmoke;
+  font-size: 1.2rem;
 }
 
-.todo1 .containerInput {
+.header-container .containerInput {
+  flex-grow: 0.5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-container .containerInput .label {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: whitesmoke;
+}
+
+.header-container .containerInput .inp {
+  min-width: 50%;
+  max-width: 55%;
+  border-radius: 0.2rem;
+  border: none;
+  text-align: center;
+}
+
+.header-container .containerInput .button-header {
+  min-width: 3rem;
+  border-radius: 0.5rem;
+  color: whitesmoke;
+  border: none;
+  font-size: 2rem;
+}
+
+.header-container .containerInput #buttonPlus {
+  background-color: rgba(24, 228, 24, 0.911);
+}
+
+.header-container .containerInput #buttonMinus {
+  background-color: rgba(228, 24, 24, 0.911);
+}
+
+.header-container #container-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.todo1 .containerInput .inp {
-  border-radius: 10px;
-  height: 30px;
-  width: 30rem;
-  border: none;
-  text-align: center;
-  opacity: 80%;
-  font-size: 2rem;
-  padding: 4px;
-  font-family: "Questrial", sans-serif;
-}
-
-.todo1 .todoClone {
+.container-items-todo {
+  height: 95%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 9px 0;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  padding: 2rem 0;
+  position: relative;
 }
 
-.todo1 .todoClone .taskDone {
-  transition: 0.5s;
-  color: rgba(0, 255, 21, 0.5);
-}
-
-.todo1 .todoClone .liClone {
-  position: auto;
-  display: inline-block;
-  border-radius: 10px;
-  height: 30px;
-  width: 30rem;
-  border: none;
-  text-align: center;
-  opacity: 80%;
-  font-size: 2rem;
-  padding: 4px;
-  font-family: "Questrial", sans-serif;
-  background-color: whitesmoke;
-}
-
-.todo1 .buttonMinus,
-.todo1 .buttonMinusClone {
-  padding: 0;
-  border-radius: 10px;
-  width: 30px;
-  opacity: 80%;
-  height: 30px;
-  font-size: 2rem;
-  border: none;
-  background-color: whitesmoke;
+.todoClone {
+  border: 1px solid whitesmoke;
+  min-width: 25rem;
+  max-width: 30rem;
+  height: 25%;
+  border-radius: 1rem;
   transition: 1s;
 }
 
-.todo1 .buttonMinus:hover, .todo1 .buttonMinus:hover,
-.todo1 .buttonMinusClone:hover,
-.todo1 .buttonMinusClone:hover {
-  background-color: #ff2525;
+.categoryContainter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  height: 35%;
+  border-radius: 1rem 1rem 0 0;
+  font-size: 2rem;
+}
+
+.taskContainer {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 65%;
+  font-size: 2rem;
+  list-style: none;
+}
+
+.buttonClone {
+  border: none;
+  width: 1.8rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 0.3rem;
+}
+
+#buttonPlusCloneId {
+  background-color: rgba(50, 230, 33, 0.884);
   color: whitesmoke;
   transition: 1s;
-  transform: translateY(-2px);
-  box-shadow: 1px 5px 5px 0px black;
 }
 
-.todo1 .buttonMinus:active, .todo1 .buttonMinus:active,
-.todo1 .buttonMinusClone:active,
-.todo1 .buttonMinusClone:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px black;
-}
-
-.todo1 .buttonPlus,
-.todo1 .buttonPlusClone {
-  padding: 0;
-  border-radius: 10px;
-  width: 30px;
-  opacity: 80%;
-  height: 30px;
-  font-size: 2rem;
-  border: none;
+#buttonPlusCloneId:hover {
   background-color: whitesmoke;
+  color: rgba(50, 230, 33, 0.884);
+}
+
+#buttonMinusCloneId {
+  background-color: red;
+  color: whitesmoke;
   transition: 1s;
 }
 
-.todo1 .buttonPlus:hover, .todo1 .buttonPlus:hover,
-.todo1 .buttonPlusClone:hover,
-.todo1 .buttonPlusClone:hover {
-  transition: 1s;
-  transform: translateY(-2px);
-  box-shadow: 1px 5px 5px 0px black;
-  background-color: rgba(0, 255, 21, 0.5);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 1px 5px 5px 0px black;
+#buttonMinusCloneId:hover {
+  background-color: whitesmoke;
+  color: red;
 }
 
-.todo1 .buttonPlus:active, .todo1 .buttonPlus:active,
-.todo1 .buttonPlusClone:active,
-.todo1 .buttonPlusClone:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px black;
+.taskDone {
+  background-color: rgba(40, 216, 24, 0.884);
 }
 
-.taskFailed {
-  color: #ff2525;
-}
-
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 6rem;
+@media only screen and (max-width: 620px) {
+  .header-container {
+    height: 20%;
   }
-  .todo1 .containerInput .inp {
-    width: 60%;
+  .header-container .containerInput {
+    width: 100%;
+    margin: 0.5rem 0;
   }
-  .todo1 .todoClone .liClone {
-    width: 60%;
+  .header-container .containerInput .button-header {
+    min-width: 0rem;
+    width: 15%;
+    border-radius: 0.5rem;
+    color: whitesmoke;
+    border: none;
+  }
+  .container-items-todo {
+    height: 80%;
   }
 }
 /*# sourceMappingURL=main.css.map */

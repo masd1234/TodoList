@@ -1,98 +1,153 @@
-h1 {
-  color: $color-white;
-  font-size: 8rem;
-  height: 200px;
-  @include displayFlexCenter;
-}
-
-.todo1 {
-  height: 500px;
-  margin: 9px 0;
-
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  height: 5%;
+  flex-wrap: wrap;
+  z-index: 500;
+  .logo-container {
+    min-width: 15%;
+    color: whitesmoke;
+    font-size: 1.2rem;
+  }
   .containerInput {
-    @include displayFlexCenter;
-    gap: 0.5rem;
+    flex-grow: 0.5;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .label {
+      font-size: 2rem;
+      margin-right: 1rem;
+      color: whitesmoke;
+    }
+
     .inp {
-      @include inputLayout;
+      min-width: 50%;
+      max-width: 55%;
+      border-radius: 0.2rem;
+      border: none;
+      text-align: center;
+    }
+
+    .button-header {
+      min-width: 3rem;
+      border-radius: 0.5rem;
+      color: whitesmoke;
+      border: none;
+      font-size: 2rem;
+    }
+
+    #buttonPlus {
+      background-color: rgba(24, 228, 24, 0.911);
+    }
+
+    #buttonMinus {
+      background-color: rgba(228, 24, 24, 0.911);
     }
   }
-
-  .todoClone {
-    @include displayFlexCenter;
+  #container-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    margin: 9px 0;
-
-    .taskDone {
-      transition: 0.5s;
-      color: $color-green;
-    }
-
-    .liClone {
-      position: auto;
-      display: inline-block;
-      @include inputLayout;
-      background-color: $color-white;
-    }
-  }
-  .buttonMinus,
-  .buttonMinusClone {
-    @include buttomLayout;
-    background-color: $color-white;
-    transition: 1s;
-    &:hover,
-    &:hover {
-      background-color: $color-red;
-      color: $color-white;
-      @include hover;
-    }
-
-    &:active,
-    &:active {
-      @include unhover;
-    }
-  }
-
-  .buttonPlus,
-  .buttonPlusClone {
-    @include buttomLayout;
-    background-color: $color-white;
-    transition: 1s;
-    &:hover,
-    &:hover {
-      @include hover;
-      background-color: $color-green;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 1px 5px 5px 0px $color-shadow;
-    }
-    &:active,
-    &:active {
-      @include unhover;
-    }
   }
 }
 
-.taskFailed {
-  color: $color-red;
+.container-items-todo {
+  height: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  padding: 2rem 0;
+  position: relative;
 }
 
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 6rem;
-  }
-  .todo1 {
+.todoClone {
+  border: 1px solid whitesmoke;
+  min-width: 25rem;
+  max-width: 30rem;
+  height: 25%;
+  border-radius: 1rem;
+  transition: 1s;
+}
+
+.categoryContainter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  height: 35%;
+  border-radius: 1rem 1rem 0 0;
+  font-size: 2rem;
+}
+
+.taskContainer {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 65%;
+  font-size: 2rem;
+  list-style: none;
+}
+
+.buttonClone {
+  border: none;
+  width: 1.8rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 0.3rem;
+}
+
+#buttonPlusCloneId {
+  background-color: rgba(50, 230, 33, 0.884);
+  color: whitesmoke;
+  transition: 1s;
+}
+
+#buttonPlusCloneId:hover {
+  background-color: whitesmoke;
+  color: rgba(50, 230, 33, 0.884);
+}
+
+#buttonMinusCloneId {
+  background-color: red;
+  color: whitesmoke;
+  transition: 1s;
+}
+
+#buttonMinusCloneId:hover {
+  background-color: whitesmoke;
+  color: red;
+}
+
+.taskDone {
+  background-color: rgba(40, 216, 24, 0.884);
+}
+
+@media only screen and (max-width: 620px) {
+  .header-container {
+    height: 20%;
     .containerInput {
-      .inp {
-        width: 60%;
+      width: 100%;
+      margin: 0.5rem 0;
+
+      .button-header {
+        min-width: 0rem;
+        width: 15%;
+        border-radius: 0.5rem;
+        color: whitesmoke;
+        border: none;
       }
     }
   }
 
-  .todo1 {
-    .todoClone {
-      .liClone {
-        width: 60%;
-      }
-    }
+  .container-items-todo {
+    height: 80%;
   }
 }

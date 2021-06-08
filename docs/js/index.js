@@ -1,10 +1,11 @@
 // iife that creates the selectors for every necessary html element
 const selectorExposer = (() => {
   let selectors = {
-    container: document.querySelector(".todo1"),
+    container: document.querySelector(".header-container"),
+    container_items: document.querySelector(".container-items-todo"),
     inputt: document.querySelector(".inp"),
-    buttonMas: document.querySelector(".buttonPlus"),
-    buttonMinus: document.querySelector(".buttonMinus"),
+    buttonMas: document.getElementById("buttonPlus"),
+    buttonMinus: document.getElementById("buttonMinus"),
   };
   return {
     selectorPublic() {
@@ -17,83 +18,41 @@ const selectorExposer = (() => {
 
 const addElement = (e) => {
   const externalSeleAdd = selectorExposer.selectorPublic().selectors;
-  // html elements creation
-  const containerCreator = {
-    creatCont: document.createElement("div"),
-    creatLi: document.createElement("li"),
-    creatButtonPlus: document.createElement("button"),
-    creatButtonMinus: document.createElement("button"),
-  };
-
-  const { creatCont, creatLi, creatButtonPlus, creatButtonMinus } =
-    containerCreator;
-
-  //adding classes to html elements
-
-  const classAdder = {
-    classCont: creatCont.classList.add("todoClone"),
-    classLi: creatLi.classList.add("liClone"),
-    classPlus: creatButtonPlus.classList.add("buttonPlusClone"),
-    classMinus: creatButtonMinus.classList.add("buttonMinusClone"),
-  };
-
-  // adding id
-
-  creatCont.id = "todoIdClone";
-  creatButtonPlus.id = "buttonPlusCloneId";
-  creatButtonMinus.id = "buttonMinusCloneId";
-  creatLi.id = "liCloneId";
-
-  // reading the input field
-
-  const getVal = {
-    getValue: document.querySelector("#val"),
-  };
-
-  const valueInpt = getVal.getValue.value;
-  creatLi.innerHTML = getVal.getValue.value;
-
-  //adding inner texts to html elements
-  creatButtonPlus.innerText = "v";
-  creatButtonMinus.innerText = "x";
-
+  let getValTask = document.querySelector("#valTask").value;
+  let getValCategory = document.querySelector("#valCategory").value;
   //checks if the input is empty or not
-  if (valueInpt === "" || valueInpt === null) {
+
+  if (getValTask === "" || getValCategory === "") {
     e.stopPropagation();
     alert("You must type a task in the input field");
   } else {
+    const contItem = document.createElement("div");
+    contItem.classList.add("todoClone");
+    contItem.id = "todoIdClone";
+
+    const item = `
+    <div class="categoryContainter"><p>${getValCategory}</p></div>
+    <div class="taskContainer">
+    <p>Task:</p>
+    <li class="liClone" id="liCloneId">${getValTask}</li>
+    <button class="buttonClone" id="buttonPlusCloneId">V</button>
+    <button class="buttonClone" id="buttonMinusCloneId">X</button>
+    </div>
+    `;
+
+    contItem.innerHTML = item;
     //appending the new div to the body of html
-    externalSeleAdd.container.appendChild(creatCont);
-    //appending the inner elements to the div
-    creatCont.appendChild(creatLi);
-    creatCont.appendChild(creatButtonPlus);
-    creatCont.appendChild(creatButtonMinus);
-    getVal.getValue.value = "";
+    externalSeleAdd.container_items.appendChild(contItem);
+    document.querySelector("#valTask").value = "";
+    document.querySelector("#valCategory").value = "";
   }
 };
 
-// this function remove a list element from the bottom click the buttom
-const removeElement = (e) => {
-  const externalSelecListener = selectorExposer.selectorPublic().selectors;
-  if (
-    e.target.parentNode.id === "containerInputId" &&
-    document.getElementById("todoIdClone")
-  ) {
-    externalSelecListener.container.removeChild(
-      externalSelecListener.container.lastElementChild
-    );
-  } else {
-    e.stopPropagation();
-  }
-};
-
-// this function removes the current list element if you click the buttom - or check  if the same list element is complete
-
-const checkValue = (e) => {
-  if (e.target.id == "buttonMinusCloneId") {
-    e.target.parentNode.remove();
-  } else if (e.target.id == "buttonPlusCloneId") {
-    e.target.previousSibling.classList.toggle("taskDone");
+const doneOrDeleteItem = (e) => {
+  if (e.target.id === "buttonMinusCloneId") {
+    e.target.parentNode.parentNode.remove();
+  } else if (e.target.id === "buttonPlusCloneId") {
+    e.target.parentNode.parentNode.classList.toggle("taskDone");
   }
 };
 
@@ -106,7 +65,9 @@ const listenerEvent = (() => {
     }
   });
 
-  externalSelecListener.container.addEventListener("click", checkValue);
+  externalSelecListener.container_items.addEventListener(
+    "click",
+    doneOrDeleteItem
+  );
   externalSelecListener.buttonMas.addEventListener("click", addElement);
-  externalSelecListener.buttonMinus.addEventListener("click", removeElement);
 })();
