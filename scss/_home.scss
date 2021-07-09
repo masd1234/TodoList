@@ -58,10 +58,10 @@
 .container-items-todo {
   height: 95%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-content: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
-  overflow: scroll;
   padding: 2rem 0;
   position: relative;
 }
@@ -73,6 +73,7 @@
   height: 25%;
   border-radius: 1rem;
   transition: 1s;
+  margin: 1rem;
 }
 
 .categoryContainter {
