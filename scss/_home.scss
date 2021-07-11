@@ -12,14 +12,15 @@
     font-size: 1.2rem;
   }
   .containerInput {
-    flex-grow: 0.5;
+    flex-grow: 1;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 0.2rem;
 
     .label {
       font-size: 2rem;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       color: whitesmoke;
     }
 
@@ -28,7 +29,6 @@
       max-width: 55%;
       border-radius: 0.2rem;
       border: none;
-      text-align: center;
     }
 
     .button-header {
@@ -50,7 +50,7 @@
   #container-buttons {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
   }
 }
@@ -138,12 +138,27 @@
       width: 100%;
       margin: 0.5rem 0;
 
+      .label {
+        width: 30%;
+      }
+      .inp {
+        flex-grow: 1;
+      }
+
       .button-header {
         min-width: 0rem;
         width: 15%;
         border-radius: 0.5rem;
         color: whitesmoke;
         border: none;
+        justify-content: center;
+      }
+    }
+
+    #container-buttons {
+      justify-content: center;
+      #buttonPlus {
+        flex-grow: 0.5;
       }
     }
   }

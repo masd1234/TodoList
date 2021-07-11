@@ -33,15 +33,16 @@ body {
 }
 
 .header-container .containerInput {
-  flex-grow: 0.5;
+  flex-grow: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 0.2rem;
 }
 
 .header-container .containerInput .label {
   font-size: 2rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   color: whitesmoke;
 }
 
@@ -50,7 +51,6 @@ body {
   max-width: 55%;
   border-radius: 0.2rem;
   border: none;
-  text-align: center;
 }
 
 .header-container .containerInput .button-header {
@@ -72,7 +72,7 @@ body {
 .header-container #container-buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
 }
 
@@ -160,12 +160,25 @@ body {
     width: 100%;
     margin: 0.5rem 0;
   }
+  .header-container .containerInput .label {
+    width: 30%;
+  }
+  .header-container .containerInput .inp {
+    flex-grow: 1;
+  }
   .header-container .containerInput .button-header {
     min-width: 0rem;
     width: 15%;
     border-radius: 0.5rem;
     color: whitesmoke;
     border: none;
+    justify-content: center;
+  }
+  .header-container #container-buttons {
+    justify-content: center;
+  }
+  .header-container #container-buttons #buttonPlus {
+    flex-grow: 0.5;
   }
   .container-items-todo {
     height: 80%;
